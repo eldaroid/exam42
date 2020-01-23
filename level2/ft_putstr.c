@@ -1,43 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgracefo <fgracefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 17:56:23 by eldaroid          #+#    #+#             */
-/*   Updated: 2020/01/23 13:32:51 by fgracefo         ###   ########.fr       */
+/*   Created: 2020/01/23 15:29:26 by fgracefo          #+#    #+#             */
+/*   Updated: 2020/01/23 15:29:27 by fgracefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-
-int		ft_strlen(const char *src)
+void	ft_putstr(char const *s)
 {
-	int		i;
-
-	i = 0;
-	while (src[i])
+	if (s)
 	{
-		i++;
+		while (*s != '\0')
+		{
+			ft_putchar(*s);
+			s++;
+		}
 	}
-	return (i);
-}
-
-char	*ft_strdup(const char *src)
-{
-	char	*new;
-	int		i;
-
-	i = 0;
-	if (!(new = (char *)malloc(sizeof(char) * ft_strlen(src) + 1)))
-		return (NULL);
-	while (src[i])
-	{
-		new[i] = src[i];
-		i++;
-	}
-	new[i] = '\0';
-	return (new);
 }

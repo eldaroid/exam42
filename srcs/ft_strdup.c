@@ -3,41 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgracefo <fgracefo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 17:56:23 by eldaroid          #+#    #+#             */
-/*   Updated: 2020/01/23 13:32:51 by fgracefo         ###   ########.fr       */
+/*   Created: 2019/09/05 21:54:01 by hthunder          #+#    #+#             */
+/*   Updated: 2019/09/09 14:29:56 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 #include <stdlib.h>
 
-int		ft_strlen(const char *src)
+char	*ft_strdup(const char *s1)
 {
+	char	*ptr;
 	int		i;
 
 	i = 0;
-	while (src[i])
-	{
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_strdup(const char *src)
-{
-	char	*new;
-	int		i;
-
-	i = 0;
-	if (!(new = (char *)malloc(sizeof(char) * ft_strlen(src) + 1)))
+	if (!(ptr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
 		return (NULL);
-	while (src[i])
+	while (s1[i] != '\0')
 	{
-		new[i] = src[i];
+		ptr[i] = s1[i];
 		i++;
 	}
-	new[i] = '\0';
-	return (new);
+	ptr[i] = s1[i];
+	return (ptr);
 }
