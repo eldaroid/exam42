@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inter2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgracefo <fgracefo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldaroid <eldaroid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 14:25:26 by fgracefo          #+#    #+#             */
-/*   Updated: 2020/01/23 14:48:03 by fgracefo         ###   ########.fr       */
+/*   Updated: 2020/01/24 16:01:04 by eldaroid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	inter(char *s1, char *s2)
 {
 	int		array[256] = {0};
 	int		i;
-	int		j;
 
 	i = 0;
 	while (s2[i])
@@ -26,7 +25,6 @@ void	inter(char *s1, char *s2)
 		i++;
 	}
 	i = 0;
-	j = 0;
 	while (s1[i])
 	{
 		if (array[(int)s1[i]] == 1)
