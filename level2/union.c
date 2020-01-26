@@ -6,7 +6,7 @@
 /*   By: eldaroid <eldaroid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 15:22:01 by eldaroid          #+#    #+#             */
-/*   Updated: 2020/01/24 15:39:14 by eldaroid         ###   ########.fr       */
+/*   Updated: 2020/01/25 10:42:01 by eldaroid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int    check_s1(char *s1, int i)
     j = 0;
     while (j < i)
     {
-        if (s1[i] == s1[j])
+        if ((s1[i] == s1[j]))
             return (0);
         j++;
     }
