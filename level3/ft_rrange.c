@@ -1,43 +1,42 @@
 #include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 
-int ft_rrange(int  start, int end)
+// int *ft_rrange(int  start, int end)
+// {
+//     int     count;
+//     int     *array;
+
+//     count = (end >= start) ? end - start + 1: start - end + 1;
+//     ft_putnbr(count);
+//     printf("\n");
+//     if (!(array = (int *)malloc(sizeof(int) * count)))
+//         return (NULL);
+//     while (count-- > 0)
+//     {
+//         array[count] = (end >= start) ? start++: start--;
+//         printf("array = %d\n", array[count]);
+//     }
+//     return (array);
+// }
+int     *ft_rrange(int start, int end)
 {
-    int     count;
+	int	*r;
+	int	len;
 
-    count = (end >= start) ? end - start : start - end;
-    return (i);
-}
-
-void    ft_putnbr(int nb)
-{
-    char    c;
-
-    if (nb == -2147483648)
-    {
-        ft_putchar('-');
-        ft_putchar('2');
-        nb %= 1000000000;
-        nb *= -1;
-    }
-    if (nb < 0)
-    {
-        nb *= -1;
-        write(1, "-", 1);
-    }
-    if (nb > 9)
-    {
-        ft_putnbr(nb / 10);
-        ft_putnbr(nb % 10);
-    }
-    else
-    {
-        ft_putchar(nb + '0');
-    }
+	len = (end >= start) ? end - start + 1 : start - end + 1;
+	if (!(r = (int*)malloc(sizeof(int) * len)))
+		return (NULL);
+	 while (len--)
+     {
+		 r[len] = (end >= start) ? start++ : start--;
+        printf("array = %d\n", r[len]);
+     }
+	return (r);
 }
 
 int     main(void)
 {
-    int i = ft_rrange(1, 3);
-    ft_putnbr(i);
+    int *array = ft_rrange(-1, 3);
     return (0);
 }
