@@ -14,7 +14,6 @@ unsigned int				pgcd(unsigned int nb1, unsigned int nb2)
 	return (1);
 }
 
-x
 
 unsigned int	lcm1(unsigned int a, unsigned int b)
 {
