@@ -25,6 +25,7 @@ int		ft_list_size(t_list *list)
 		return (0);
 	while (list)
 	{
+		printf("node = %s",list->data);
 		list = list->next;
 		count++;
 	}
@@ -41,5 +42,5 @@ int	main(void)
 	list = add_list(list, "abc");
 	list = add_list(list, "uuu");
 	count = ft_list_size(list);	
-	printf("count = %d", count);
+	// printf("count = %d", count);
 }
