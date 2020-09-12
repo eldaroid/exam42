@@ -1,59 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   2union.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eldaroid <eldaroid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 18:09:28 by fgracefo          #+#    #+#             */
-/*   Updated: 2020/09/13 00:49:47 by eldaroid         ###   ########.fr       */
+/*   Created: 2020/09/12 00:05:30 by eldaroid          #+#    #+#             */
+/*   Updated: 2020/09/12 01:13:45 by eldaroid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
 
-int		ft_strlen(char *s1)
+int		check_last(char **s1, int i, char c)
 {
+	while (i > 0)
+	{
+		i--;
+		if ((*s1)[i] == c)
+			return (0);
+		
+	}
+	return (1);
+}
+
+void	ft_union(char *s1, char *s2)
+{
+	char array[256] = {0};
 	int		i;
 
 	i = 0;
 	while (s1[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strrev(char *str)
-{
-	int strlen;
-	int i;
-	char tmp;
-	
-	strlen = ft_strlen(str);
-	i = 0;
-	while (i < strlen)
 	{
-		strlen--;
-		tmp = str[strlen];
-		str[strlen] = str[i];
-		str[i] = tmp;
+		if (array[(int)s1[i]] == 0)
+		{
+			array[(int)s1[i]] = 1;
+			write(1, &s1[i], 1);
+		}
 		i++;
 	}
-	return (str);
-}
-
-int		main(void)
-{
-	char	last[] = "1234";
-	char	*new1;
-	int		i;
-
 	i = 0;
-	new1 = ft_strrev(last);
-	while (new1[i])
+	while (s2[i])
 	{
-		write(1, &new1[i], 1);
+		
+		if (array[(int)s2[i]] == 0 && check_last(&s2, i, s2[i]))
+			write(1, &s2[i], 1);
 		i++;
 	}
-	return (0);
+}
+
+int	main(int argc, char **argv) 
+{
+	if (argc == 3)
+		ft_union(argv[1], argv[2]);
+	write(1, "\n", 1);
+	return 0;
 }
