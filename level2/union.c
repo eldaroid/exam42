@@ -6,58 +6,47 @@
 /*   By: eldaroid <eldaroid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 15:22:01 by eldaroid          #+#    #+#             */
-/*   Updated: 2020/01/25 10:42:01 by eldaroid         ###   ########.fr       */
+/*   Updated: 2020/09/14 20:45:27 by eldaroid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int    check_s1(char *s1, int i)
+int		check_last(char **s1, int i, char c)
 {
-    int     j;
-    j = 0;
-    while (j < i)
-    {
-        if ((s1[i] == s1[j]))
-            return (0);
-        j++;
-    }
-    return (1);
+	while (i > 0)
+	{
+		i--;
+		if ((*s1)[i] == c)
+			return (0);
+		
+	}
+	return (1);
 }
 
-int     check_s2(char *s1, char s2, int i)
+void	ft_union(char *s1, char *s2)
 {
-    int     j;
+	char array[256] = {0};
+	int		i;
 
-    j = 0;
-    while (s1[j] && j < i)
-    {
-        if (s1[j] == s2)
-            return (0);
-        j++;
-    }
-    return (1);
-}
-
-int     ft_union(char *s1, char *s2)
-{
-    int     i;
-
-    i = 0;
-    while (s1[i])
-    {
-        if (check_s1(s1, i))
-            write(1, &s1[i], 1);
-        i++;
-    }
-    i = 0;
-    while (s2[i])
-    {
-        if (check_s1(s2, i) && check_s2(s1, s2[i], i))
-            write(1, &s2[i], 1);
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (s1[i])
+	{
+		if (array[(int)s1[i]] == 0)
+		{
+			array[(int)s1[i]] = 1;
+			write(1, &s1[i], 1);
+		}
+		i++;
+	}
+	i = 0;
+	while (s2[i])
+	{
+		
+		if (array[(int)s2[i]] == 0 && check_last(&s2, i, s2[i]))
+			write(1, &s2[i], 1);
+		i++;
+	}
 }
 
 int     main(int argc, char **argv)
