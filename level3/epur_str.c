@@ -6,7 +6,7 @@
 /*   By: eldaroid <eldaroid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 21:06:49 by eldaroid          #+#    #+#             */
-/*   Updated: 2020/01/31 13:53:19 by eldaroid         ###   ########.fr       */
+/*   Updated: 2020/09/14 23:08:40 by eldaroid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ int     main(int argc, char **argv)
     {
         epur_str(argv[1]);
     }
+    write(1, "\n", 1);
     return (0);
 }

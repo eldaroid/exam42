@@ -6,7 +6,7 @@
 /*   By: eldaroid <eldaroid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 16:00:55 by eldaroid          #+#    #+#             */
-/*   Updated: 2020/09/14 20:44:46 by eldaroid         ###   ########.fr       */
+/*   Updated: 2020/09/16 23:38:04 by eldaroid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	print_bits2(unsigned char octet)
 }
 int        main(void)//
 {//
-    char a = '&';
+    int a = 2;
     print_bits2(a);//
     write(1, "\n", 1);//
     // print/its(n);//
