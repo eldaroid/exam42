@@ -75,10 +75,10 @@ int main(void)
 	// list = list->next;
 	// printf("%s\n", list->data);
 	ft_list_remove_if(&list, "ABC", &ft_strcmp);
-	while (list)
-	{
-		printf("%s\n", list->data);
-		list = list->next;
-	}
+	// printf("%s\n", list->data);
+	// 	list = list->next;
+	// printf("%s\n", list->data);
+	// list = list->next;
+	// printf("%s\n", list->data);
 	return (0);
 }
